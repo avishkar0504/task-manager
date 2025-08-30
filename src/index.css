@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1️⃣ Root CSS variables (Default light mode) */
+:root {
+  --bg-color: #f9fafb;        /* gray-50 */
+  --text-color: #111827;      /* gray-900 */
+  --accent-color: #0ea5e9;    /* sky-600 */
+  --highlight-color: #38bdf8; /* sky-400 */
+}
+
+/* 2️⃣ Body base */
+html, body, #root {
+  height: 100%;
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 3️⃣ Theme classes */
+.theme-light {
+  --bg-color: #f9fafb;
+  --text-color: #111827;
+  --accent-color: #0ea5e9;
+  --highlight-color: #38bdf8;
+}
+
+.theme-dark {
+  --bg-color: #111827;
+  --text-color: #f3f4f6;
+  --accent-color: #6366f1;
+  --highlight-color: #a5b4fc;
+}
+
+.theme-coder {
+  --bg-color: #0d1117;
+  --text-color: #c9d1d9;
+  --accent-color: #ff7f50;
+  --highlight-color: #58a6ff;
+}
+
+/* 4️⃣ Containers */
+.container-card {
+  @apply rounded-2xl shadow-xl p-6 transition;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* 5️⃣ Inputs */
+.input {
+  @apply w-full px-4 py-2 border rounded-xl focus:outline-none transition;
+  border-color: var(--highlight-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* 6️⃣ Buttons */
+.btn {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-xl font-medium transition;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--highlight-color);
+}
+
+.btn-secondary {
+  @apply text-gray-900;
+  background-color: var(--bg-color);
+  border: 1px solid var(--highlight-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+}
+
+.btn-danger {
+  @apply text-white;
+  background-color: #ef4444; /* rose-500 */
+}
+
+.btn-danger:hover {
+  background-color: #dc2626; /* rose-600 */
+}
+
+/* 7️⃣ Badges */
+.badge {
+  @apply inline-flex items-center px-2 py-0.5 text-xs font-semibold rounded-full;
+}
+
+.badge-green { @apply bg-green-100 text-green-700; }
+.badge-amber { @apply bg-amber-100 text-amber-700; }
+.badge-blue  { @apply bg-sky-100 text-sky-700; }
+
+/* 8️⃣ Utility for smooth theme transitions on all elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
